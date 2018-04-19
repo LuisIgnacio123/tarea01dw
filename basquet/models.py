@@ -5,7 +5,7 @@ class Team(models.Model):
 	name_team = models.CharField(max_length=200)
 	description = models.TextField()
 	logo_team = models.ImageField()
-	code_team = models.Interger()
+	code_team = models.IntegerField()
 
 	def __str__(self):
 		return self.name
@@ -14,16 +14,16 @@ class Team(models.Model):
 class Player(models.Model):
 	"""docstring for ClassName"""
 	name_player = models.CharField(max_length=200)
-	nickname = models.CharField(max_length=100)
-	birth_date = models.DateTime()
-	years = models.Interger()
-	rut = models.CharField()
-	email = models.CharField()
-	height = models.Interger()
-	weight = models..Interger()
+	nickname_player = models.CharField(max_length=100)
+	birth_date = models.DateTimeField()
+	years = models.IntegerField()
+	rut_player = models.CharField(max_length=100)
+	email = models.CharField(max_length=100)
+	height = models.IntegerField()
+	weight = models.IntegerField()
 	photo = models.ImageField()
 	game_position = ('Base','base',)
-	code_team = models.ForeignKey('Team',on_delete=models.CASCADE)	
+	code_team = models.ForeignKey(Team, on_delete=models.CASCADE)	
 
 	def __str__(self):
 		return self.name
@@ -33,11 +33,11 @@ class Player(models.Model):
 class Coach(models.Model):
 	"""docstring for ClassName"""
 	name_coach = models.CharField(max_length=200)
-	years = models.Interger()
-	email = models.CharField()
-	rut = models.CharField()
-	nickname = CharField(max_length=100)
-	code_team = models.ForeignKey('Team',on_delete=CASCADE)
+	years = models.IntegerField()
+	email = models.CharField(max_length=100)
+	rut_coach = models.CharField(max_length=100)
+	nickname_coach = models.CharField(max_length=100)
+	code_team = models.ForeignKey(Team,on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.name
