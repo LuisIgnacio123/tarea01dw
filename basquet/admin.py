@@ -7,7 +7,7 @@ class TeamAdmin(admin.ModelAdmin):
 	"""docstring for ClassName"""
 	list_display = ('code_team','logo_team', 'name_team',)
 	list_filter = ('code_team', 'name_team',)
-	search_fields = ('name_team',)
+	search_fields = ('name_team', 'code_team',)
 	
 
 

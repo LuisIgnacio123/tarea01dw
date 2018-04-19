@@ -8,14 +8,14 @@ class Team(models.Model):
 	code_team = models.IntegerField()
 
 	def __str__(self):
-		return self.name
+		return self.name_team
 
 
 class Player(models.Model):
 	"""docstring for ClassName"""
 	name_player = models.CharField(max_length=200)
 	nickname_player = models.CharField(max_length=100)
-	birth_date = models.DateTimeField()
+	birth_date = models.DateField()
 	years = models.IntegerField()
 	rut_player = models.CharField(max_length=100)
 	email = models.CharField(max_length=100)
@@ -26,7 +26,7 @@ class Player(models.Model):
 	code_team = models.ForeignKey(Team, on_delete=models.CASCADE)	
 
 	def __str__(self):
-		return self.name
+		return self.name_player
 
 
 
@@ -40,14 +40,14 @@ class Coach(models.Model):
 	code_team = models.ForeignKey(Team,on_delete=models.CASCADE)
 
 	def __str__(self):
-		return self.name
+		return self.name_coach
 
 class Game(models.Model):
 	"""docstring for ClassName"""
 	name_game = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.name
+		return self.name_game
 
 		
 		
