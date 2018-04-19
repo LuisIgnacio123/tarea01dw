@@ -14,9 +14,9 @@ class TeamAdmin(admin.ModelAdmin):
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
 	"""docstring for ClassName"""
-	list_display = ('name_player','photo', 'nickname_player', 'code_team')
-	search_fields = ('name_player', 'nickname_player', 'rut_player')
-	list_filter = ('code_team', 'birth_date',)
+	list_display = ('name_player','photo', 'nickname_player', 'code_team','rut_player',)
+	search_fields = ('name_player', 'nickname_player', 'rut_player',)
+	list_filter = ('code_team', 'birth_date','rut_player',)
 		
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
